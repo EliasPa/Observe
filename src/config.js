@@ -5,6 +5,7 @@ let url = process.env.API_URI || ('http://localhost:'+ port +'/')
 /*if(process.env.NODE_ENV === 'development'){
     url = 'https://observation-app.herokuapp.com/'
 }*/
+console.log(url)
 module.exports = {
     url
 }
