@@ -1,17 +1,18 @@
 .center {
     display: flex;
     padding: 1em;
-    padding-top: 0.5em;
+    padding-top: 0em;
+    padding-bottom: 1.6em;
 }
 
 body {
     background-image: url('./view.jpg');
-    background-position: 0px 1100px;
+    background-size: cover;
 }
 .mdl-tabs__tab-bar{
     background-color: #FAFAFA;
 }
 
 .padded {
-    padding-top: 1em;
+    padding-top: 8em;
 }

@@ -3,18 +3,10 @@
         <table class=" weatherTable mdl-data-table mdl-js-data-table mdl-shadow--2dp">
             <thead>
                 <tr>
-                    <th class="icon mdl-data-table__cell--non-numeric">
-                        <i class=" material-icons">place</i>
-                    </th>
-                    <th>
-                        <i class="icon material-icons">brightness_5</i>
-                    </th>
-                    <th class="t-text">
-                        Max
-                    </th>
-                    <th class="t-text">
-                        Min
-                    </th>
+                    <th class="icon mdl-data-table__cell--non-numeric"><i class=" material-icons">place</i></th>
+                    <th><i class="icon material-icons">brightness_5</i></th>
+                    <th class="t-text">Max</th>
+                    <th class="t-text">Min</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,54 +29,56 @@
                     <td class="mdl-data-table__cell--non-numeric">
                         <tt-component :text="minText"></tt-component>
                     </td>
-
-
                 </tr>
             </tbody>
+            <div class="refresh">
+                <button v-on:click="getAll()" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                    <i class="material-icons">refresh</i>
+                </button>
+            </div>
         </table>
-        <div class="refresh">
-            <button v-on:click="getAll()" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                <i class="material-icons">refresh</i>
-            </button>
-        </div>
+
     </div>
 </template>
 
 <script>
-    import '../assets/main.css'
-    import '../assets/table.css'
-    let axios = require('axios')
-    let config = require('../config.js')
+    import "../assets/main.css";
+    import "../assets/table.css";
+    let axios = require("axios");
+    let config = require("../config.js");
 
-    import ttComponent from './ttComponent'
+    import ttComponent from "./ttComponent";
 
     export default {
         name: "Table",
         data() {
             return {
                 weatherData: [],
-                locationText: 'Location',
-                temperatureText: 'Last logged temperature',
-                maxText: 'Maximum temperature in the last 24 hours',
-                minText: 'Minimum temperature in the last 24 hours'
-            }
+                locationText: "Location",
+                temperatureText: "Last logged temperature",
+                maxText: "Maximum temperature in the last 24 hours",
+                minText: "Minimum temperature in the last 24 hours"
+            };
         },
         methods: {
             getAll: function () {
-                let vue = this
-                let url = config.url + 'temperatures'
-                axios.get(url).then((res) => {
-                    vue.weatherData = res.data.weatherData
-                }).catch((err) => {
-                    // console.log(err.response.code)
-                })
+                let vue = this;
+                let url = config.url + "temperatures";
+                axios
+                    .get(url)
+                    .then(res => {
+                        vue.weatherData = res.data.weatherData;
+                    })
+                    .catch(err => {
+                        // console.log(err.response.code)
+                    });
             }
         },
         components: {
             ttComponent
         },
         mounted() {
-            this.getAll()
+            this.getAll();
         }
-    }
+    };
 </script>

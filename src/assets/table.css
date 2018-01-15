@@ -1,5 +1,11 @@
 .refresh {
     padding: 1em;
+    z-index: 0;
+    position: absolute;
+    left: 17.5em;
+    top: -3.5em;
+    width: 100%;
+    overflow: hidden;
 }
 
 .mdl-data-table tbody tr {

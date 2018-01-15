@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
-      <div v-on:click="updateData()" class="mdl-tabs__tab-bar">
+      <div v-on:click="updateData()" class="mdl-shadow--2dp mdl-tabs__tab-bar">
         <a href="#view" class="mdl-tabs__tab is-active">View data</a>
         <a href="#log" class="mdl-tabs__tab">Log data</a>
       </div>

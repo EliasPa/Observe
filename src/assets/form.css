@@ -25,3 +25,9 @@
     height: 110px;
     padding-top: 1px;
 }
+
+.add {
+    left: 0.5em;
+    top: 0.9em;
+    width: 100%;
+}
