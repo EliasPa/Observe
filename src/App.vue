@@ -57,7 +57,7 @@
     },
     methods: {
       getAllTemperatures: function () {
-        console.log(process.env.API_URI)
+        console.log(process.env)
         let url = config.url + 'location'
         let vue = this
         axios.get(url).then((res) => {
