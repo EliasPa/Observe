@@ -1,19 +1,18 @@
 <template>
     <div class="center table animated fadeIn">
-        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+        <table class=" weatherTable mdl-data-table mdl-js-data-table mdl-shadow--2dp">
             <thead>
                 <tr>
-                    <th class="mdl-data-table__cell--non-numeric">
-
-                        <i class="icon material-icons">place</i>
+                    <th class="icon mdl-data-table__cell--non-numeric">
+                        <i class=" material-icons">place</i>
                     </th>
                     <th>
                         <i class="icon material-icons">brightness_5</i>
                     </th>
-                    <th>
+                    <th class="t-text">
                         Max
                     </th>
-                    <th>
+                    <th class="t-text">
                         Min
                     </th>
                 </tr>

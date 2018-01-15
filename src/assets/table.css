@@ -6,4 +6,12 @@
     height: 57px;
 }
 
-.icon {}
+
+.mdl-data-table th {
+    vertical-align: middle;
+    padding-top: 14px; 
+}
+
+th.t-text {
+    padding-bottom: 12px
+}

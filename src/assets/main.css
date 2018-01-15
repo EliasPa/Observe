@@ -3,3 +3,15 @@
     padding: 1em;
     padding-top: 0.5em;
 }
+
+body {
+    background-image: url('./view.jpg');
+    background-position: 0px 1100px;
+}
+.mdl-tabs__tab-bar{
+    background-color: #FAFAFA;
+}
+
+.padded {
+    padding-top: 1em;
+}

@@ -6,7 +6,7 @@
         <a href="#log" class="mdl-tabs__tab">Log data</a>
       </div>
       <div class="mdl-tabs__panel is-active" id="view">
-        <div class="mdl-grid">
+        <div class="mdl-grid padded">
           <div class="mdl-layout-spacer"></div>
           <div>
             <card-component :isHot="true" :location="hot.name" :temp="hot.temp"></card-component>
@@ -17,7 +17,7 @@
         </div>
       </div>
       <div class="mdl-tabs__panel" id="log">
-        <div class="mdl-grid">
+        <div class="mdl-grid padded">
           <div class="mdl-layout-spacer"></div>
           <div>
             <form-component v-for="location in locations" :location="location" :onClick="() => changeCoords(location)"></form-component>
