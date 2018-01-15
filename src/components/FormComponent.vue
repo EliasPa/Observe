@@ -11,7 +11,7 @@
                 <form @submit.prevent="log">
                     <!-- Numeric text field, for temperature -->
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input maxlength="12" v-model="temperature" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="temperature">
+                        <input autocomplete="off" maxlength="12" v-model="temperature" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="temperature">
                         <label class="mdl-textfield__label" for="temperature">°C currently in {{location}}...</label>
                         <span class="mdl-textfield__error">Temperature should be a number!</span>
                     </div>

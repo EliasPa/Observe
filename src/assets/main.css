@@ -6,8 +6,11 @@
 }
 
 body {
-    background-image: url('./view.jpg');
+    
     background-size: cover;
+    background-image: linear-gradient( rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0)),
+    url('./view.jpg');
 }
 .mdl-tabs__tab-bar{
     background-color: #FAFAFA;

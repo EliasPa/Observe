@@ -1,6 +1,6 @@
 <template>
     <div class="center table animated fadeIn">
-        <table class=" weatherTable mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+        <table class="weatherTable mdl-data-table mdl-js-data-table mdl-shadow--2dp">
             <thead>
                 <tr>
                     <th class="icon mdl-data-table__cell--non-numeric"><i class=" material-icons">place</i></th>
