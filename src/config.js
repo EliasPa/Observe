@@ -1,4 +1,4 @@
-let url = `${API_URL}/${name}`
+let url = `${API_URI}/${name}`
 console.log(url)
 module.exports = {
     url
