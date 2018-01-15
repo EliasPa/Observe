@@ -1,0 +1,27 @@
+.mdl-card__title {
+    min-height: 20px;
+    height: 90px;
+}
+
+.white-text {
+    color: #fafafa;
+}
+
+.hotCard,
+.coldCard {
+    float: left;
+    width: 200px;
+    height: 150px;
+}
+
+.gray-text {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.hotCard>.mdl-card__title {
+    background: url("./clouds.png") center / cover;
+}
+
+.coldCard>.mdl-card__title {
+    background: url("./desert.png") center / cover;
+}

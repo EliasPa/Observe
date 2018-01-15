@@ -1,0 +1,27 @@
+.formTitle.mdl-card__title {
+    padding: 1px;
+    padding-left: 16px;
+    height: 35px;
+    background-color: rgba(99, 147, 250, 0.123);
+}
+
+.formText {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.margin {
+    margin-left: 1em;
+}
+
+.formCard:hover {
+    background: rgba(0, 0, 0, 0.028)
+}
+
+.formCard {
+    cursor: pointer;
+    float: left;
+    width: 250px;
+    height: 110px;
+    padding-top: 1px;
+}
