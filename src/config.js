@@ -1,5 +1,4 @@
-let url = env.API_URI
-console.log(env.API_URI)
+let url = `${API_URL}/${name}`
 console.log(url)
 module.exports = {
     url
