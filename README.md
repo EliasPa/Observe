@@ -29,3 +29,12 @@ and users can't dynamically add any locations, more locations can be added quite
 Support for dynamically adding locations wouldn't be difficult either, due to the loose coupling.
 More information on the backend implementation can be found here: https://github.com/EliasPa/ObserveBackend
 </div>
+
+<h4>Technologies used</h4>
+* VueJS and Webpack
+* npm
+* OpenStreetMap (leaflet)
+* Material Design Lite
+
+<h4>Other</h4>
+* There's lots of room for scaling, for example adding automated logging!
