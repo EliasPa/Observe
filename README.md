@@ -1,6 +1,6 @@
 # Observe
 
-> App for viewing and loggin weather data.
+> App for viewing and logging weather data.
 
 * The application can be found running on Heroku here: https://observation-app.herokuapp.com/ !
 
