@@ -3,7 +3,7 @@
     <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
       <div v-on:click="updateData()" class="mdl-shadow--2dp mdl-tabs__tab-bar">
         <a href="#view" class="mdl-tabs__tab is-active">View data</a>
-        <a href="#log" class="mdl-tabs__tab">Log data</a>
+        <a reg="log" href="#log" class="mdl-tabs__tab">Log data</a>
       </div>
       <div class="mdl-tabs__panel is-active" id="view">
         <div class="mdl-grid padded">
@@ -22,7 +22,7 @@
           <div>
             <form-component v-for="location in locations" :location="location" :onClick="() => changeCoords(location)"></form-component>
           </div>
-          <map-component :locationCoordinates="locationCoordinates"></map-component>
+          <map-component v-if="mapTabSelected" :locationCoordinates="locationCoordinates"></map-component>
           <div class="mdl-layout-spacer"></div>
         </div>
       </div>
@@ -42,6 +42,7 @@
     name: "app",
     data() {
       return {
+        mapTabSelected: false,
         temp: 37,
         hot: {
           name: '',
@@ -56,6 +57,14 @@
       };
     },
     methods: {
+      changeTab: function(){
+        let logTab = this.$refs.log
+        if(log.classList.contains('is-active'))
+          this.mapTabSelected = true
+        else
+          this.mapTabSelected = false
+        
+      },
       getAllTemperatures: function () {
         console.log(process.env)
         let url = config.url + 'location'
@@ -79,6 +88,7 @@
         })
       },
       updateData: function(){
+        this.changeTab()
         this.getAllTemperatures()
         this.$refs.weatherTable.getAll()
       },

@@ -2,7 +2,7 @@
     <div class="map_center animated fadeIn">
         <div v-bind:class="classObj">
             <v-map id="mapid" ref="map" :zoom="zoom" :center="locationCoordinates" :options="{ zoomControl: false }">
-                <v-tilelayer url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"></v-tilelayer>
+                <v-tilelayer :url="url" :attribution="attribution"></v-tilelayer>
                 <v-marker v-for="coord in coordinates" :lat-lng="coord"></v-marker>
             </v-map>
         </div>
@@ -25,7 +25,7 @@
                 },
                 zoom: 6,
                 center: [47.413220, -1.219482],
-                url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+                url: "https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png",
                 attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
                 marker: L.latLng(47.413220, -1.219482),
                 path: '../assets/',
