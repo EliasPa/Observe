@@ -31,10 +31,12 @@ More information on the backend implementation can be found here: https://github
 </div>
 
 <h4>Technologies used</h4>
+
 * VueJS and Webpack
 * npm
 * OpenStreetMap (leaflet)
 * Material Design Lite
 
 <h4>Other</h4>
+
 * There's lots of room for scaling, for example adding automated logging!
