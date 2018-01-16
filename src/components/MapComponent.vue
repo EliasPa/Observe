@@ -46,7 +46,6 @@
         },
         props: ['locationCoordinates'],
         mounted() {
-            //window.componentHandler.upgradeDom()
             this.getCoordinates()
             let map = this.$refs.map.mapObject
         }
