@@ -11,7 +11,8 @@
                 <form @submit.prevent="log">
                     <!-- Numeric text field, for temperature -->
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input autocomplete="off" maxlength="12" v-model="temperature" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="temperature">
+                        <input autocomplete="off" maxlength="12" v-model="temperature" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?"
+                            id="temperature">
                         <label class="mdl-textfield__label" for="temperature">°C currently in {{location}}...</label>
                         <span class="mdl-textfield__error">Temperature should be a number!</span>
                     </div>
@@ -23,8 +24,15 @@
                 </button>
             </div>
         </div>
+        <div ref="snackBar" class="mdl-js-snackbar mdl-snackbar">
+            <div class="mdl-snackbar__text">Hello</div>
+            <button class="mdl-snackbar__action" type="button"></button>
+        </div>
     </div>
 </template>
+
+
+
 
 <script>
     let config = require("./../config");
@@ -47,8 +55,12 @@
             };
         },
         methods: {
+            showMessage: function (data) {
+                let snackbarContainer = this.$refs.snackBar
+                snackbarContainer.MaterialSnackbar.showSnackbar(data)
+            },
             log: function () {
-                if (!isNaN(this.temperature) || this.temperature != "") {
+                if (!isNaN(this.temperature) && this.temperature != "") {
                     let url = config.url;
                     let vue = this;
                     let data = {
@@ -56,10 +68,14 @@
                         temperature: vue.temperature
                     };
 
-                    axios
-                        .post(url, data)
+                    axios.post(url, data)
                         .then(res => {
                             // TODO.
+                            if (res.data.code == 200) {
+                                this.showMessage({ message: 'Temperature logged successfully! Thank you' })
+                            } else {
+                                this.showMessage({ message: res.data.error })
+                            }
                         })
                         .catch(err => {
                             if (err && err.response.code === 501) {
@@ -68,13 +84,14 @@
                                 vue.error = "Unhandled error.";
                             }
                         });
-
-                    this.temperature = "";
+                    this.temperature = ""
                     this.$el.querySelector(".mdl-textfield").MaterialTextfield.change(); // removes the, sometimes problematic,'is-dirty' class from the field.
+                } else {
+                    this.showMessage({ message: 'Please type in a number.' })
                 }
             },
             animateAndClick: function () {
-                this.onClick();
+                this.onClick()
             }
         },
         props: ["location", "onClick"],
