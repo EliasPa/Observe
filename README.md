@@ -1,7 +1,8 @@
 # observationapp
 
 > App for viewing and loggin weather data.
-> The application can be found running on Heroku here: https://observation-app.herokuapp.com/ !
+
+* The application can be found running on Heroku here: https://observation-app.herokuapp.com/ !
 
 ## Setup guide
 
@@ -25,7 +26,7 @@ and view temperature data at five different observing points around the world.
 
 <div>
 Although the application currently supports only 5 locations,
-and users can't dynamically add any locations, more locations can be added quite easily.
+and users can't dynamically add any locations, more locations can be added manually quite easily.
 Support for dynamically adding locations wouldn't be difficult either, due to the loose coupling.
 More information on the backend implementation can be found here: https://github.com/EliasPa/ObserveBackend
 </div>
