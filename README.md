@@ -1,4 +1,4 @@
-# observationapp
+# Observe
 
 > App for viewing and loggin weather data.
 
