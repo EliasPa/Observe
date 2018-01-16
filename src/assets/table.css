@@ -1,4 +1,4 @@
-.refresh {
+.refresh, .spinner{
     padding: 1em;
     z-index: 0;
     position: absolute;
@@ -6,6 +6,15 @@
     top: -3.5em;
     width: 100%;
     overflow: hidden;
+}
+
+.weatherTable {
+    width: 26em;
+}
+
+.spinner {
+    left: -1em;
+    top: 4em;
 }
 
 .mdl-data-table tbody tr {

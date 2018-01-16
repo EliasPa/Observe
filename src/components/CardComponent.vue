@@ -12,49 +12,50 @@
 </template>
 
 <script>
+import "../assets/main.css";
+import "../assets/card.css";
 
-    import '../assets/main.css'
-    import '../assets/card.css'
-
-    export default {
-        name: "Table",
-        data() {
-            return {
-                weather_text: '',
-                classObj: {
-                    hotCard: true,
-                    coldCard: false,
-                    'mdl-card': true,
-                    'mdl-shadow--2dp': true
-
-                }
-            };
-        },
-        methods: {
-            setText: function (location) {
-                let hotOrNot = 'coldest'
-                if (this.isHot) {
-                    hotOrNot = 'hottest'
-                }
-                this.weather_text = location + ' is the '
-                    + hotOrNot
-                    + ' location at the moment!'
-            }
-        },
-        props: ["location", "temp", "isHot"],
-        watch: {
-            location: function (value) {
-                this.setText(value)
-            }
-        },
-        mounted: function() {
-            this.classObj.hotCard = this.isHot;
-            this.classObj.coldCard = !this.isHot;
-            this.setText(this.location)
-        }
+export default {
+  name: "Table",
+  data() {
+    return {
+      weather_text: "",
+      classObj: {
+        hotCard: true,
+        coldCard: false,
+        "mdl-card": true,
+        "mdl-shadow--2dp": true
+      }
     };
+  },
+  methods: {
+    setText: function(location) {
+      if (location != "" && this.temp) {
+        let hotOrNot = "coldest";
+        if (this.isHot) {
+          hotOrNot = "hottest";
+        }
+        this.weather_text =
+          location + " is the " + hotOrNot + " location at the moment!";
+      } else {
+          this.weather_text = 'Loading...'
+      }
+    }
+  },
+  props: ["location", "temp", "isHot"],
+  watch: {
+    location: function(value) {
+      this.setText(value);
+    }
+  },
+  mounted: function() {
+    this.classObj.hotCard = this.isHot;
+    this.classObj.coldCard = !this.isHot;
+    this.setText(this.location);
+  }
+};
 </script>
 
 <style>
-    
+
 </style>

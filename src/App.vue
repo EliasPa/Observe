@@ -44,12 +44,12 @@
       return {
         temp: 37,
         hot: {
-          name: 'Dubai',
-          temp: 37
+          name: '',
+          temp: 0
         },
         cold: {
-          name: 'Helsinki',
-          temp: -8.1
+          name: '',
+          temp: 0
         },
         locations: [],
         locationCoordinates: ['60.1697530', '24.9490830']
